@@ -197,9 +197,9 @@
                 </div>
                 <div class="tipMenuTags">
                     <div class="tagContainer">
-                        <span>精致慢生活</span>
-                        <span>感悟思语</span>
-                        <span>我的年华</span>
+                        <span>我的简书</span>
+                        <span>Steam周赠送</span>
+                        <span>Epic周赠送</span>
                     </div>
                 </div>
                 <div class="wxtitle">
@@ -214,7 +214,8 @@
         </div>
     </div>
 </div>
-<script type="text/javascript" color="0,205,205" opacity='0.7' zIndex="-2" count="99" src="asstes/js/canvas-nest.js"></script>
+<script type="text/javascript" color="0,205,205" opacity='0.7' zIndex="-2" count="99"
+        src="asstes/js/canvas-nest.js"></script>
 </body>
 <script>
     jQuery(document).ready(function () {
@@ -245,7 +246,13 @@
         $(".tagContainer span").on("click", function () {
             $this = $(this);
             var tag = $this.html();
-            window.location.href = "#";
+            if (tag == "我的简书") {
+                window.location.href = "https://www.jianshu.com/u/9ff08a9275ed";
+            } else if (tag == "Steam周赠送") {
+                window.location.href = "https://steamdb.info/upcoming/free/";
+            } else if (tag == "Epic周赠送") {
+                window.location.href = "https://www.epicgames.com/store/zh-CN/";
+            }
         });
         //::::::::::::tipMenu end:::::::::::::::::
 
@@ -258,7 +265,6 @@
                     columnWidth: 25 //每两列之间的间隙为25像素
                 });
             });
-            //masonryWidth();
         }
 
         //调用瀑布流函数
@@ -278,27 +284,6 @@
         jQuery(".item").on("mouseout", function () {
             jQuery(this).css("box-shadow", "0 0 2px rgba(0,0,0,0.1)");
         });
-
-
-        //TODO 该函数有问题，后期可以考虑实现瀑布流居中
-        function masonryWidth() {
-            if ($(".leftblock").width() == 405) {
-                $browser = document.body.clientWidth;
-                //alert($browser);
-
-                $browser = $browser - $(".leftblock").width();
-                //alert($browser);
-                $boxWidth = $(".item").width();  // 盒子宽度
-                $boxSpacing = 25; //盒子与盒子之间的间距
-                //alert($boxWidth);
-                $num = ($browser) / ($boxWidth + $boxSpacing);
-                $n = parseInt($num);
-                $total = $n * ($boxWidth);
-                $("#content").css('width', $total);
-                // 浏览器窗口变动
-                window.onresize = masonryWidth;
-            }
-        }
     });
 </script>
 <script>
