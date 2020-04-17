@@ -1,0 +1,249 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"> 
+	<head>
+		 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		 <title>luqin</title>
+		 <meta name="keywords" content="路钦的个人博客" />
+		 <meta name="description" content="欢迎来到我的主页" />
+		 <link href="asstes/css/style.css" rel="stylesheet" type="text/css" media="all">
+		 <link rel="shortcut icon" href="asstes/img/head.png"/>
+		 <script type="text/javascript" src="asstes/js/jquery-1.8.2.min.js"></script>
+		 <script type="text/javascript" src="asstes/js/jquery.masonry.min.js"></script>
+		 <script type="text/javascript" src="asstes/js/base.js"></script>
+		 <script type="text/javascript" src="asstes/js/jquery.lazyload.min.js"></script>
+		 <script>
+			var _hmt = _hmt || [];
+			(function() {
+			  var hm = document.createElement("script");
+			  hm.src = "asstes/js/hm.js?0309212fba2d0ece7bc574c03f038b8e";
+			  var s = document.getElementsByTagName("script")[0]; 
+			  s.parentNode.insertBefore(hm, s);
+			})();
+		 </script>
+	</head>
+	<body>
+		<div class="container">
+			<div style="float:left;width:300px;display:none;">
+			</div>
+			<div class="leftblock">
+				<div class="topdiv">
+					<div class="main">
+						<div class="caption"><h3 style="color: red">欢迎来到我的主页</h1></div>
+						<div class="headimg">
+							<img src="asstes/img/head.png" class="xwcms" 
+							onmouseover="this.src='asstes/img/head.png'" onmouseout="this.src='asstes/img/head.png'"/>
+						</div>
+						<div class="caption">
+							<a href="https://www.jianshu.com/u/9ff08a9275ed" style="color:white;">苦海飘摇</a>
+						</div>
+						<div class="des">
+							<span>我的名字：“苦海飘摇”</span> 
+							<span>程序猿/轻生活/轻日记/轻梦想</span> 
+							<span>======QQ：1215490667======</span>
+							<div class="menu"><span>首页</span>/<span>苦海飘摇</span>/<span>精致慢生活</span>/<span>感悟思语</span></div>
+						</div>
+					</div>
+				</div>
+				<div class="backdiv">
+				</div>
+			</div>
+			<div class="rightblock">
+				<div class="content" id="content">
+					<div class="item">
+						<div class="title"><a href="#" target="_blank">测试</a></div>
+						<div class="pimg"><a href="#" target="_blank"><img src="http://www.youtiy.com/pages/skin/images/loading.gif" data-original="http://www.youtiy.com/pages/images/artImage/20191113/nDMiv7uxX920191113202305.png" class="pic"></a></div>
+						<div class="info">
+							<div>作者：彼岸花</div>
+							<div>2020-01-13 20:23:12</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="title"><a href="#" target="_blank">测试</a></div>
+						<div class="pimg"><a href="#" target="_blank"><img src="http://www.youtiy.com/pages/skin/images/loading.gif" data-original="http://www.youtiy.com/pages/images/artImage/20191113/0cVOjBixeX20191113212904.png" class="pic"></a></div>
+						<div class="info">
+							<div>作者：彼岸花</div>
+							<div>2020-01-13 21:29:08</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="tipBtn"></div>
+
+				<div class="tipMenu">
+					<div class="top">
+						<div class="close">
+							<img src="asstes/img/cross.png"/>
+						</div>
+					</div>
+					<div class="center">
+						<div class="title">
+							标签云
+						</div>
+						<div class="tipMenuTags">
+							<div class="tagContainer">
+								<span>网页设计</span>
+								<span>精致慢生活</span>
+								<span>感悟思语</span>
+								<span>我的旧年华</span>
+							</div>
+						</div>
+						<div class="wxtitle">
+							加我微信
+						</div>
+						<div class="tipMenuTags">
+							 <div class="wximg">
+								<img src="asstes/img/wx.jpg"/>
+							 </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+	jQuery(document).ready(function(){
+		
+		if(!IsPC()){
+			window.location.href=baseUrl+"/index2.html";
+		}
+		
+		if($(".leftblock").width()==405){
+			resizeLeftBlock();
+		}
+		
+		window.onresize = function(){
+			if($(".leftblock").width()==405){
+				resizeLeftBlock();
+			}
+		}
+		
+		function resizeLeftBlock(){
+			var num=1-$(".leftblock").width()/window.screen.width;	
+			num=num.toFixed(2);
+			num=num*100+"%";
+			//alert(num);
+			$(".rightblock").css("width",num);
+		}
+		
+		$(".menu span").on('click',function(){
+			$this=$(this);
+			var tag=$this.html();
+			if(tag=="首页"){
+				window.location.href=baseUrl;
+			}else{
+				window.location.href=baseUrl+"/index.html?tag="+encodeURI(encodeURI(tag));
+			}
+		
+		});
+		
+		$("#btnSearch").on('click',function(){
+			var sv=$("#iptSearch").val();
+			window.location.href=baseUrl+"/index.html?sh="+encodeURI(encodeURI(sv));
+		});
+		
+		
+		function GetRequest() { 
+			var url = location.search; //获取url中"?"符后的字串 
+			var theRequest = new Object(); 
+			if (url.indexOf("?") != -1) { 
+				var str = url.substr(1); 
+				strs = str.split("&"); 
+				for(var i = 0; i < strs.length; i ++) { 
+					theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]); 
+				} 
+			} 
+			return theRequest; 
+		} 
+		
+		var iptvalue=decodeURI(GetRequest()["sh"]);
+		var tagvalue=decodeURI(GetRequest()["tag"]);
+		
+		
+		var spans=$(".menu span");
+		for(var i=0;i<spans.length;i++){
+			if($(spans[i]).html()==tagvalue){
+				$(spans[i]).css("color","#FF7256");
+				$(spans[i]).css("font-weight","bold");
+				break;
+			}
+		}
+		
+		if(tagvalue=="undefined"||!tagvalue){
+			for(var i=0;i<spans.length;i++){
+				if($(spans[i]).html()=="首页"){
+					$(spans[i]).css("color","#FF7256");
+					$(spans[i]).css("font-weight","bold");
+				}
+			}
+		}
+		
+		if(iptvalue!="undefined"&&iptvalue){
+			$("#iptSearch").val(iptvalue);
+		}
+		
+		//::::::::::::tipMenu begin:::::::::::::::::
+		$(".close").on("click",function(){
+			$(".tipMenu").animate({marginRight:"-350px"});
+		});
+		$(".tipBtn").on("click",function(){
+			$(".tipMenu").animate({marginRight:"0px"});
+		});
+		$(".tagContainer span").on("click",function(){
+			$this=$(this);
+			var tag=$this.html();
+			window.location.href=baseUrl+"/index.html?tag="+encodeURI(encodeURI(tag));
+		});
+		//::::::::::::tipMenu end:::::::::::::::::
+		
+		//初始化瀑布流
+		function f_masonry(){
+			var $container = jQuery('#content');    
+				$container.imagesLoaded(function(){
+					$container.masonry({
+						itemSelector: '.item',
+						columnWidth: 25 //每两列之间的间隙为25像素
+					});
+			});
+			//masonryWidth();
+		}
+		
+		//调用瀑布流函数
+		f_masonry();
+		
+		//初始化图片懒加载
+		$("img.pic").lazyload({
+			effect:"fadeIn",
+			failurelimit:40,
+			load:f_masonry,
+		});
+		
+		jQuery(".item").on("mouseover",function(){
+			jQuery(this).css("box-shadow","0 0 5px rgba(0,0,0,0.3)");
+		});
+	
+		jQuery(".item").on("mouseout",function(){
+			jQuery(this).css("box-shadow","0 0 2px rgba(0,0,0,0.1)");
+		});
+		
+		
+		//TODO 该函数有问题，后期可以考虑实现瀑布流居中
+		function masonryWidth(){
+			if($(".leftblock").width()==405){
+				$browser = document.body.clientWidth;
+				//alert($browser);
+		
+				$browser=$browser-$(".leftblock").width();
+				//alert($browser);
+				$boxWidth = $(".item").width();  // 盒子宽度
+				$boxSpacing = 25; //盒子与盒子之间的间距
+				//alert($boxWidth);
+				$num = ($browser) / ($boxWidth + $boxSpacing);
+				$n = parseInt($num);
+				$total=$n*($boxWidth);
+				$("#content").css('width',$total);
+				// 浏览器窗口变动
+				window.onresize = masonryWidth;
+			}
+		}
+	});	
+	</script>
+</html>
