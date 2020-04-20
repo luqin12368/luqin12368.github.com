@@ -4,9 +4,9 @@ body{
 	font:12px 微软雅黑,宋体,Arial,sans-serif;
 	margin:0px;
 	padding:0px;
-	/*background-image:url(../images/bg6.jpg);*/
+	background-image:url(../images/bg.jpg);
+	opacity: 0.8;
 	color:#858585;
-	
 } 
 a:link {
 	color:black;
@@ -44,7 +44,7 @@ a:active {
 	max-width:405px;
 	background:url(../images/12.jpg) 0 0 no-repeat,
 			   url(../images/b2.jpg) 0 666px repeat;
-			  
+
 
 }
 .leftblock .backdiv{
@@ -175,15 +175,15 @@ a:active {
 	margin:0 auto;
 }
 
-.rightblock .item{
-	background:#FAFAFA;
-	width:280px;
-	min-height:320px;
-	margin:5px;
-	box-shadow:0 0 2px rgba(0,0,0,0.1);
-	position:relative;
-}
-.rightblock .item .title{
+/*.rightblock .item{*/
+	/*background:#FAFAFA;*/
+	/*width:280px;*/
+	/*min-height:320px;*/
+	/*margin:5px;*/
+	/*box-shadow:0 0 2px rgba(0,0,0,0.1);*/
+	/*position:relative;*/
+/*}*/
+.rightblock .title{
 	display:block;
 	text-align:left;
 	color:#7DD9E6;
@@ -622,7 +622,7 @@ a:active {
 	cursor:pointer;
 }
 
-/*::::::::::::::::::适应不同分辨率:::::::::::::::::::::::::*/
+/*!*::::::::::::::::::适应不同分辨率:::::::::::::::::::::::::*!*/
 @media only screen and (min-width: 1024px) {
 	.rightblock .container-detail{
 		width:600px;
@@ -667,7 +667,7 @@ a:active {
 		width:800px;
 	}
 	.rightblock .item {
-		width:360px;
+		width:100%;
 		margin:25px;
 	}
 	.rightblock .pager #kkpager{
