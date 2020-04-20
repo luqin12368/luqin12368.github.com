@@ -4,8 +4,8 @@ body{
 	font:12px 微软雅黑,宋体,Arial,sans-serif;
 	margin:0px;
 	padding:0px;
-	background-image:url(../images/bg.jpg);
-	opacity: 0.8;
+	/*background-image:url(../images/bg.jpg);*/
+	/*opacity: 0.8;*/
 	color:#858585;
 } 
 a:link {
@@ -42,6 +42,7 @@ a:active {
 	top:0px;
 	min-width:300px;
 	max-width:405px;
+	opacity: 0.8;
 	background:url(../images/12.jpg) 0 0 no-repeat,
 			   url(../images/b2.jpg) 0 666px repeat;
 
